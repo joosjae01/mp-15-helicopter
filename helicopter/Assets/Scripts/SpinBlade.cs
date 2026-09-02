@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpinBlade : MonoBehaviour
 {
     [SerializeField] private float _spinSpeed;
-    const float MAX_SPIN = 100.0f;
+    const float MAX_SPIN = 1000.0f;
     void Update()
     {
         Accelerate();
@@ -15,7 +15,7 @@ public class SpinBlade : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space) && _spinSpeed <= MAX_SPIN)
         {
-            _spinSpeed += 5f;
+            _spinSpeed += 1f;
         }
 
         if(_spinSpeed > MAX_SPIN)
