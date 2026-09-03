@@ -21,11 +21,19 @@ public class SpinBlade : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) && _spinSpeed <= MAX_SPIN)
         {
             _spinSpeed += 1f;
+        } else if(Input.GetKey(KeyCode.LeftControl) && _spinSpeed > 0)
+        {
+            _spinSpeed -= 1f;
         }
 
         if(_spinSpeed > MAX_SPIN)
         {
             _spinSpeed = MAX_SPIN;
+        }
+
+        if(_spinSpeed <= 0)
+        {
+            _spinSpeed = 0f;
         }
 
         Spin();

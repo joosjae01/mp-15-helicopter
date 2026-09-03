@@ -1465,6 +1465,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _heliSpeed: 5
   _rotateSpeed: 100
+  HeliBlade: {fileID: 374783075}
 --- !u!1 &1580294005
 GameObject:
   m_ObjectHideFlags: 0
