@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private Transform _helicopter;
+    private void Update()
     {
-        
+        ChaseHelicopter();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void ChaseHelicopter()
     {
-        
+        transform.position = _helicopter.position;
+        transform.rotation = _helicopter.rotation;
+        transform.Translate(Vector3.forward * -3);
+        transform.Translate(Vector3.up * 1.5f);
     }
 }
