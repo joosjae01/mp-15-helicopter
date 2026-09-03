@@ -6,6 +6,7 @@ public class HeliMovement : MonoBehaviour
 {
     [SerializeField] private float _heliSpeed;
     [SerializeField] private float _rotateSpeed;
+    [SerializeField] public SpinBlade HeliBlade;
     void Update()
     {
         Vector3 direction = GetDirection();
@@ -15,7 +16,7 @@ public class HeliMovement : MonoBehaviour
 
     private void Move(Vector3 direction)
     {
-        if (Input.GetKey(KeyCode.Space) && direction.y <= 500)
+        if (Input.GetKey(KeyCode.Space) && direction.y <= 500 && HeliBlade.CanFly())
         {
             direction.y += 1f;
         }
