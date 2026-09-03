@@ -16,17 +16,26 @@ public class HeliMovement : MonoBehaviour
 
     private void Move(Vector3 direction)
     {
-        if (Input.GetKey(KeyCode.Space) && direction.y <= 500 && HeliBlade.CanFly())
-        {
-            direction.y += 1f;
-        }
-
-        if (Input.GetKey(KeyCode.LeftShift) && direction.y >= 0 && HeliBlade.CanFly())
+        if(!HeliBlade.CanFly() && transform.position.y > 1f)
         {
             direction.y -= 1f;
+            transform.Translate(0, direction.y * _heliSpeed * Time.deltaTime, 0);
         }
 
-        transform.Translate(0, direction.y * _heliSpeed * Time.deltaTime, direction.z * _heliSpeed * Time.deltaTime);
+        if (HeliBlade.CanFly())
+        {
+            if (Input.GetKey(KeyCode.Space) && direction.y <= 500 && HeliBlade.CanFly())
+            {
+                direction.y += 1f;
+            }
+
+            if (Input.GetKey(KeyCode.LeftShift) && direction.y >= 0 && HeliBlade.CanFly())
+            {
+                direction.y -= 1f;
+            }
+
+            transform.Translate(0, direction.y * _heliSpeed * Time.deltaTime, direction.z * _heliSpeed * Time.deltaTime);
+        }
     }
 
     private void HeliRotate(Vector3 direction)

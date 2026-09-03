@@ -13,7 +13,7 @@ public class SpinBlade : MonoBehaviour
 
     public bool CanFly()
     {
-        return _spinSpeed == MAX_SPIN;
+        return _spinSpeed >= MAX_SPIN / 2;
     }
 
     private void Accelerate()
