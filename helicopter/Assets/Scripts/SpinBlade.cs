@@ -11,6 +11,11 @@ public class SpinBlade : MonoBehaviour
         Accelerate();
     }
 
+    public bool CanFly()
+    {
+        return _spinSpeed == MAX_SPIN;
+    }
+
     private void Accelerate()
     {
         if (Input.GetKey(KeyCode.Space) && _spinSpeed <= MAX_SPIN)
