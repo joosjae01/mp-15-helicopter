@@ -5,6 +5,8 @@ using UnityEngine;
 public class CameraMovement : MonoBehaviour
 {
     [SerializeField] private Transform _helicopter;
+    [SerializeField] private float _backPreset;
+    [SerializeField] private float _heightPreset;
     private void Update()
     {
         ChaseHelicopter();
@@ -14,7 +16,7 @@ public class CameraMovement : MonoBehaviour
     {
         transform.position = _helicopter.position;
         transform.rotation = _helicopter.rotation;
-        transform.Translate(Vector3.forward * -3);
-        transform.Translate(Vector3.up * 1.5f);
+        transform.Translate(Vector3.forward * -_backPreset);
+        transform.Translate(Vector3.up * _heightPreset);
     }
 }

@@ -1221,6 +1221,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _helicopter: {fileID: 1573006732}
+  _backPreset: 5
+  _heightPreset: 2
 --- !u!1 &1090955171
 GameObject:
   m_ObjectHideFlags: 0
