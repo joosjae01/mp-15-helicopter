@@ -21,10 +21,9 @@ public class HeliMovement : MonoBehaviour
             direction.y += 1f;
         }
 
-        if (Input.GetKey(KeyCode.LeftShift) && direction.y >= 0)
+        if (Input.GetKey(KeyCode.LeftShift) && direction.y >= 0 && HeliBlade.CanFly())
         {
             direction.y -= 1f;
-
         }
 
         transform.Translate(0, direction.y * _heliSpeed * Time.deltaTime, direction.z * _heliSpeed * Time.deltaTime);
@@ -33,7 +32,7 @@ public class HeliMovement : MonoBehaviour
     private void HeliRotate(Vector3 direction)
     {
         if (direction == Vector3.zero) return;
-        transform.Rotate(0, direction.x * _rotateSpeed* Time.deltaTime, 0);
+        transform.Rotate(0, direction.x * _rotateSpeed * Time.deltaTime, 0);
     }
 
     private Vector3 GetDirection()
